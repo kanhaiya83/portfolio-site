@@ -1,0 +1,12 @@
+{
+  "name": "project-responsive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./assets/styles/styles.scss ./assets/styles/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

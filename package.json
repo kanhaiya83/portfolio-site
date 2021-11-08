@@ -1,0 +1,13 @@
+{
+  "name": "project-p",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-tailwind": "postcss ./assets/tailwind/input.css -o ./assets/tailwind/output.css",
+    "watch-tailwind": "postcss -w ./assets/tailwind/input.css -o ./assets/tailwind/output.css",
+    "sass": "sass --watch ./assets/styles/styles.scss ./assets/styles/styles.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

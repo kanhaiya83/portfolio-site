@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-1: #ffffff;
+  --bg-2: #a9d5e0;
+  --text-1: #01410f;
+  --text-2: #505050;
+  --text-3: #000000;
+  --header-bg: #ffffff;
+  --header-text: #1a5222;
+  --header-height: 4rem;
+  --header-index: 10;
+}
+
+body {
+  font-family: nunito;
+}
+
+.header {
+  height: var(--header-height);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--header-bg);
+  color: var(--header-text);
+  border-bottom: 1px solid lightgray;
+  z-index: var(--header-index);
+}
+.header .logo {
+  font-size: 1.8rem;
+  margin-left: 4rem;
+  font-family: "pacifico";
+}
+.header .logo:hover {
+  cursor: pointer;
+}
+.header .navbar {
+  margin-left: 35%;
+}
+.header .navbar span {
+  margin-left: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.header .navbar span:hover {
+  cursor: pointer;
+}
+.header .sign-in {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-right: 4rem;
+}
+.header .sign-in:hover {
+  cursor: pointer;
+}
+
+.main-container {
+  height: calc(100vh - var(--header-height));
+  padding: var(--header-height) 10%;
+  margin-top: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-container img {
+  width: 60%;
+}
+
+.product-info-container {
+  width: 100%;
+}
+.product-info-container > * {
+  margin-bottom: 0.5rem;
+}
+.product-info-container .title {
+  font-size: 2.5rem;
+  font-family: "nunito";
+  font-weight: 500;
+  color: var(--text-1);
+}
+.product-info-container .ratings-container {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.product-info-container .ratings-container * {
+  margin-right: 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.product-info-container .ratings-container img {
+  width: 1rem;
+  display: block;
+}
+.product-info-container .price {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-2);
+}
+.product-info-container .size-dropdown {
+  width: 8rem;
+  padding: 0.5rem;
+  display: block;
+  border: 1px solid var(--text-2);
+  color: var(--text-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.product-info-container .size-dropdown:focus {
+  outline: none;
+}
+.product-info-container .quantity-cart-wrapper {
+  display: flex;
+}
+.product-info-container .quantity-container {
+  width: 8rem;
+  padding: 0.3rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--text-2);
+}
+.product-info-container .quantity-container button {
+  background: transparent;
+  border: none;
+  font-size: 0px;
+}
+.product-info-container .quantity-container button:focus {
+  outline: none;
+}
+.product-info-container .quantity-container .quantity {
+  color: var(--text-2);
+  font-weight: 700;
+}
+.product-info-container .add-to-cart-btn {
+  width: 5rem;
+  margin-left: 2rem;
+  display: flex;
+}
+.product-info-container .add-to-cart-btn:hover {
+  cursor: pointer;
+}
+.product-info-container .add-to-cart-btn span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-2);
+}
+.product-info-container .add-to-cart-btn img {
+  margin-left: 1px;
+}
+.product-info-container .product-description {
+  width: 60%;
+  margin-top: 1.7rem;
+  font-weight: 600;
+}
+.product-info-container .product-description p {
+  color: var(--text-1);
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Responsive</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">Canada Dry</div>
+      <div class="navbar">
+        <span>Home</span>
+        <span>Products</span>
+        <span>Contact</span>
+        <span>About Us</span>
+      </div>
+      <div class="sign-in">SIGN-IN</div>
+    </header>
+    <section class="main-container">
+      <div class="image-container">
+        <img src="./assets/images/ginger-ale.jpg" alt="" class="w-10/12" />
+      </div>
+      <div class="product-info-container">
+        <h1 class="title">CRANBERRY GIN AND GINGER ALE MIX.</h1>
+        <div class="ratings-container">
+          <span class="ratings">4.5</span>
+          <span class="icon">
+            <img src="./assets/images/star.svg" alt="" />
+          </span>
+          <span class="buy-count">(121)</span>
+        </div>
+        <h3 class="price">$19.99</h3>
+        <select class="size-dropdown">
+          <option data-price="$19.99" selected value="250ml Cans 6 Pack">250ml Cans 6</option>
+          <option data-price="$39.99" value="">250ml Cans 12</option>
+          <option data-price="$10.99" value="1L Bottle">1L Bottle</option>
+          <option data-price="$24.99" value="2L Bottle">2L Bottle</option>
+        </select>
+        <div class="quantity-cart-wrapper">
+          <div class="quantity-container">
+          <button id="minus">
+            <img src="./assets/images/minus-icon.svg" alt="" />
+          </button>
+          <span id="quantity" class="quantity">1</span>
+          <button id="plus">
+            <img src="./assets/images/plus-icon.svg" alt="" />
+          </button>
+        </div>
+        <div class="add-to-cart-btn">
+          <span>
+            ADD TO <br>
+            CART
+         </span>
+          <img src="./assets/images/redirect.svg" alt="">
+        </div>
+        </div>
+        <div class="product-description">
+          <p>
+            Made with the crisp, refreshing ginger taste you’ve always loved, Canada Dry Ginger Ale is an unparalleled classic.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+    </section>
+  </body>
+</html>
+<script>
+  //quantity picker in product info section
+  minusBtn = document.querySelector("#minus");
+  plusBtn = document.querySelector("#plus");
+  quantityNumber = document.querySelector("#quantity");
+
+  function changeQuantity(qty) {
+    let quantity = parseInt(quantityNumber.textContent);
+    if (quantity == 1 && qty == -1) {
+      return 0;
+    }
+    quantity += qty;
+    quantityNumber.innerHTML = quantity;
+  }
+  minusBtn.addEventListener("click", () => {
+    changeQuantity(-1);
+  });
+  plusBtn.addEventListener("click", () => {
+    changeQuantity(1);
+  });
+
+  //for changing price when changing the variants
+  const variantsSelecter=document.querySelector("select.size-dropdown")
+  variantsSelecter.addEventListener("change",(e)=>{
+    var newPrice=e.target.options[e.target.selectedIndex].dataset.price;
+    document.querySelector(".product-info-container>.price").innerHTML=newPrice
+  })
+</script>
