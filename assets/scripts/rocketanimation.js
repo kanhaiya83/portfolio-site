@@ -12,6 +12,8 @@ const rocket = SVG("#rocket");
 
 const detachTimeline = new SVG.Timeline();
 
+rocketBody.timeline(detachTimeline)
+
 booster1.timeline(detachTimeline);
 booster2.timeline(detachTimeline);
 fueltank.timeline(detachTimeline);
@@ -46,7 +48,7 @@ const shakeRocket = () => {
     .animate({ duration: 200, swing: true, times: true })
     .transform({ translate: [1, -0.5] });
   rocketBody
-    .animate({ duration: 200, swing: true, times: true })
+    .animate({ duration: 200, swing: true, times: true})
     .transform({ translate: [1, -0.5] });
   flames
     .animate({ duration: 200, swing: true, times: true })
@@ -89,10 +91,11 @@ function killFlames() {
     .transform({ scale: [0, 0], origin: "top" });
 }
 
-initiateDetachment = () => {
-  killFlames();
-  detachBoosters();
-};
+function moveUpRocket(){
+rocketBody.animate(500,2000,"now").transform({translateY:-50}).animate({ duration: 200, swing: true, times: true})
+.transform({ translate: [1, -49.5] });
+
+}
 
 const lineAnimation = () => {
   const t = new SVG.Timeline();
@@ -140,6 +143,12 @@ const lineAnimation = () => {
     line4.attr("stroke-dashoffset", 63);
   }, 1000);
 };
+initiateDetachment = () => {
+  killFlames();
+  detachBoosters();
+  moveUpRocket()
+};
+
 initiate = () => {
   startFlameAnimation();
   shakeRocket();

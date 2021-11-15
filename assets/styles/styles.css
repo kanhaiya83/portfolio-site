@@ -171,6 +171,7 @@ body {
 .text-content-wrapper .heading .heading-keyword {
   position: relative;
   display: block;
+  height: var(--main-heading-font-size);
   overflow: hidden;
 }
 .text-content-wrapper .heading .heading-keyword .keyword-container {
