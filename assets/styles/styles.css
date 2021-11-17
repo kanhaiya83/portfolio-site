@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Josefin+Slab:wght@100;200;300;400;500;600;700&display=swap");
 /*#region i dont know*/
 * {
   box-sizing: border-box;
@@ -362,40 +364,49 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
-  column-gap: 20px;
+  column-gap: 40px;
   row-gap: 50px;
 }
 
 .card {
-  border-radius: 19px;
+  box-shadow: 2px 2px 7px #84889B;
+  border-radius: 5px;
   width: 100%;
   aspect-ratio: 4/3;
   background-color: white;
   text-align: center;
   transition: transform 1s;
-}
-.card .card-top {
-  height: 75%;
-  padding: 20px 0;
-}
-.card .card-top .illustration-container {
-  height: 100%;
-}
-.card .card-top .illustration-container .img {
-  height: 100%;
-}
-.card .card-bottom {
-  padding: 0 20px;
-  height: 25%;
-  border-radius: 0px 0px 19px 19px;
+  padding: 0.5rem 0.8rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #232946 0%, #0021bf 159.7%);
+  align-items: center;
 }
-.card .card-bottom .card-title {
+.card .card-icon-container {
+  border-radius: 1000px;
+  margin: 0 auto 1.5rem;
+  background-color: #aaaaaa;
+  width: 4rem;
+  height: 4rem;
+}
+.card .card-icon-container img {
+  width: 2rem;
+  display: none;
+  background-color: transparent;
+}
+.card .card-title {
+  height: 100%;
+  margin-bottom: 0.6rem;
+  display: block;
+  color: #1e1e1e;
+  font-size: 1.2rem;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-family: "josefin sans";
+}
+.card .card-description {
+  height: 100%;
+  display: block;
+  color: #797979;
+  font-size: 0.65rem;
 }
 
 .pen {

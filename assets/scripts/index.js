@@ -58,9 +58,9 @@ card_4 = document.querySelector("#card-4");
 card_5 = document.querySelector("#card-5");
 const directions = [
   "translateY(calc(-1 *  calc(100% + 50px)))",
-  "translateX(calc(100% + 20px))",
+  "translateX(calc(100% + 40px))",
   "translateY(calc(100% + 50px))",
-  "translateX(calc(-1 * calc(100% + 20px)))",
+  "translateX(calc(-1 * calc(100% + 40px)))",
 ];
 way = [
   { card: "card-5", move: 1 },
@@ -78,7 +78,7 @@ way = [
   { card: "card-1", move: 3 },
   { card: "card-3", move: 0 },
 ];
-card_Duration = 1000;
+card_Duration = 2000;
 
 function moveCard(cardId, direction) {
   const card = document.getElementById(cardId);
