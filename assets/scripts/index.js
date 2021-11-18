@@ -49,6 +49,25 @@ screenBtns.forEach((btn) => {
 //autoplayScreens(3000); //initialize the autoplay of screen changing
 //#endregion
 
+//#region responsive screen plus minus quantity
+const minusBtn=document.querySelector("#minus")
+const plusBtn=document.querySelector("#plus")
+const quantityElement=document.querySelector("#quantity")
+plusBtn.addEventListener("click",()=>{
+  changeQuantity(1)
+})
+minusBtn.addEventListener("click",()=>{
+  changeQuantity(-1)
+})
+const changeQuantity=(q)=>{
+  if(quantityElement.innerHTML==1 && (q==-1)){
+    return;
+  }
+quantityElement.innerHTML=parseInt(quantityElement.innerHTML)+q
+}
+
+//#endregion
+
 //#region cards
 
 card_1 = document.querySelector("#card-1");

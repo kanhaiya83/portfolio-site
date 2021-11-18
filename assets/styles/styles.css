@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Josefin+Slab:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700&display=swap");
 /*#region i dont know*/
 * {
   box-sizing: border-box;
@@ -31,7 +31,18 @@
   --header-text: #1a5222;
   --header-height: 4rem;
   --header-index: 10;
-  --main-heading-font-size:4rem;
+  --main-heading-font-size: 4rem;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #33ff00;
+}
+
+::selection {
+  color: white;
+  background: #33ff00;
 }
 
 body {
@@ -226,15 +237,61 @@ body {
   position: relative;
 }
 
-.project {
-  margin-bottom: 6rem;
+.projects-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rem;
 }
 
-.project-header {
-  color: #33ff00;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.row-project {
+  width: 45%;
+}
+
+.row-project-image {
+  width: 100%;
+  height: 350px;
+  background: #ffffff;
+}
+
+.row-project-description .row-project-type {
+  margin-top: 0.9rem;
+  font-weight: 500;
+  font-size: 0.6rem;
+  font-family: "josefin slab";
+  color: #939393;
+}
+.row-project-description .row-project-title {
+  margin-top: 0.9rem;
+  font-family: "josefin sans";
+  font-size: 2rem;
+  font-weight: 700;
+}
+.row-project-description .row-project-details {
+  margin-top: 0.9rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #e3e3e3;
+  font-family: "Josefin Slab";
+}
+.row-project-description .row-project-visit-btn {
+  margin: 1.2rem 0.2rem 0 0;
+  background-color: transparent;
+  border: white 2px solid;
+  border-radius: 50px;
+  color: white;
+  font-size: 0.8rem;
+  padding: 12px 30px;
+}
+.row-project-description .row-project-visit-btn:hover {
+  background-color: white;
+  color: var(--backgroundColor);
+}
+.row-project-description .row-project-visit-btn:focus {
+  outline: none;
+}
+
+.project {
+  margin-bottom: 6rem;
 }
 
 .project-discription {
@@ -296,18 +353,15 @@ body {
   background: #232946;
   padding: 1.5rem 0 1.5rem;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
 .project-2 .project-2-info .project-header {
-  margin: 0;
-  font-size: 1.8rem;
-  padding-left: 0.5rem;
+  color: white;
+  font-family: "Josefin Sans";
+  font-size: 2.7rem;
 }
 .project-2 .project-2-screen-changer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
   z-index: 100;
   width: fit-content;
   display: flex;
@@ -369,7 +423,7 @@ body {
 }
 
 .card {
-  box-shadow: 2px 2px 7px #84889B;
+  box-shadow: 2px 2px 7px #84889b;
   border-radius: 5px;
   width: 100%;
   aspect-ratio: 4/3;
@@ -603,15 +657,17 @@ body {
   width: 10.6em;
   padding: 1.15em;
   display: block;
+  border-radius: 10px;
   border: 1px solid var(--text-2);
   color: var(--text-2);
   font-size: 0.75em;
-  font-weight: 600;
+  font-weight: 500;
 }
 .responsive-project-container .product-info-container .size-dropdown:focus {
   outline: none;
 }
 .responsive-project-container .product-info-container .quantity-cart-wrapper {
+  margin-top: 20px;
   display: flex;
 }
 .responsive-project-container .product-info-container .quantity-container {
@@ -621,6 +677,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border: 1px solid var(--text-2);
+  border-radius: 10px;
 }
 .responsive-project-container .product-info-container .quantity-container button {
   background: transparent;
@@ -632,7 +689,7 @@ body {
 }
 .responsive-project-container .product-info-container .quantity-container .quantity {
   color: var(--text-2);
-  font-weight: 700;
+  font-weight: 600;
 }
 .responsive-project-container .product-info-container .add-to-cart-btn {
   width: 5em;

@@ -3,16 +3,17 @@
 //nunito
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
 //pacifico
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 //montserrat
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 //josefin Sans
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
 
 //josefin slab
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Josefin+Slab:wght@100;200;300;400;500;600;700&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700&display=swap");
 /*#region i dont know*/
 
 * {
@@ -34,11 +35,6 @@
   --secondary-text: #33ff00;
   --tertiary-text: #94a1b2;
 
-
-
-
-
-  
   --bg-1: #ffffff;
   --bg-2: #a9d5e0;
   --text-1: #01410f;
@@ -49,7 +45,16 @@
   --header-height: 4rem;
   --header-index: 10;
 
-  --main-heading-font-size:4rem;
+  --main-heading-font-size: 4rem;
+}
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: #33ff00;
+}
+
+::selection {
+  color: white;
+  background: #33ff00;
 }
 body {
   background: var(--backgroundColor);
@@ -115,7 +120,6 @@ body {
 
 /* #region header */
 
-  
 .main-header {
   width: 100%;
   height: var(--headerHeight);
@@ -144,9 +148,9 @@ body {
       img {
         width: 25px;
       }
-    }}
+    }
+  }
 }
-
 
 /* #endregion header */
 
@@ -191,12 +195,12 @@ body {
     font-weight: 700;
     letter-spacing: -3px;
     margin-left: -2px;
-    .heading-keyword{
+    .heading-keyword {
       position: relative;
       display: block;
-      height:var(--main-heading-font-size) ;
+      height: var(--main-heading-font-size);
       overflow: hidden;
-      .keyword-container{
+      .keyword-container {
         width: 100%;
         display: block;
         height: 100%;
@@ -206,19 +210,16 @@ body {
         transform: translateY(-5rem);
         display: flex;
         align-items: center;
-        &.current{
+        &.current {
           transition: transform 1s;
           transform: translateY(0);
-    
         }
-        &.push-down{
+        &.push-down {
           transition: transform 1s;
           transform: translateY(5rem);
         }
       }
     }
-    
-    
   }
   .subheading {
     font-size: 0.7rem;
@@ -250,15 +251,69 @@ body {
 .projects-wrapper {
   position: relative;
 }
+.projects-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+}
+.row-project {
+  width: 45%;
+}
+.row-project-image {
+  width: 100%;
+  height: 350px;
+  background: #ffffff;
+}
+.row-project-description {
+  .row-project-type {
+    margin-top: 0.9rem;
+    
+      font-weight: 500;
+      font-size: 0.6rem;
+      font-family: "josefin slab";
+      color: #939393;
+    
+  }
+  .row-project-title {
+      margin-top: 0.9rem;
+      font-family: "josefin sans";
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .row-project-details {
+      margin-top: 0.9rem;
+      font-size: 0.7rem;
+    font-weight: 400;
+    color: #e3e3e3;
+    font-family: "Josefin Slab";
+  }
+  .row-project-visit-btn {
+      margin: 1.2rem 0.2rem 0 0;
+      background-color: transparent;
+    border: white 2px solid;
+    border-radius: 50px;
+    color: white;
+    font-size: 0.8rem;
+    padding: 12px 30px;
+    &:hover{
+      background-color: white;
+      color: var(--backgroundColor);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
 .project {
   margin-bottom: 6rem;
 }
 
 .project-header {
-  color: #33ff00;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  // color: #33ff00;
+  // font-size: 1.5rem;
+  // font-weight: 600;
+  // margin-bottom: 1rem;
 }
 .project-discription {
   color: #c8a3ff;
@@ -318,18 +373,15 @@ body {
     background: #232946;
     padding: 1.5rem 0 1.5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     .project-header {
-      margin: 0;
-      font-size: 1.8rem;
-      padding-left: 0.5rem;
+      color: white;
+      font-family: 'Josefin Sans';
+      font-size: 2.7rem;
     }
   }
   .project-2-screen-changer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     z-index: 100;
     width: fit-content;
     display: flex;
@@ -388,12 +440,12 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, minmax(300px, 1fr));
-  column-gap: 40px;
+    column-gap: 40px;
     row-gap: 50px;
   }
 }
 .card {
-  box-shadow: 2px 2px 7px #84889B;
+  box-shadow: 2px 2px 7px #84889b;
   border-radius: 5px;
   width: 100%;
   aspect-ratio: 4/3;
@@ -404,38 +456,37 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  .card-icon-container{
+  .card-icon-container {
     border-radius: 1000px;
 
     margin: 0 auto 1.5rem;
     background-color: #aaaaaa;
-    
+
     width: 4rem;
     height: 4rem;
-    img{
+    img {
       width: 2rem;
       display: none;
       background-color: transparent;
     }
   }
-  .card-title{
-  height: 100%;
-  margin-bottom: 0.6rem;
+  .card-title {
+    height: 100%;
+    margin-bottom: 0.6rem;
 
-  display: block;
-  color: #1e1e1e;
-  font-size: 1.2rem;
-  font-weight: 600;
-  font-family: "josefin sans";
+    display: block;
+    color: #1e1e1e;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "josefin sans";
   }
-  
-  .card-description{
-  height: 100%;
-  display: block;
-  color: #797979;
-  font-size: 0.65rem;
+
+  .card-description {
+    height: 100%;
+    display: block;
+    color: #797979;
+    font-size: 0.65rem;
   }
-  
 }
 .pen {
   animation-name: pen;
@@ -530,11 +581,11 @@ body {
 /*#endregion*/
 .responsive-project-container {
   font-size: 0.85rem;
-  position: relative;width: 100%;
+  position: relative;
+  width: 100%;
   height: 100%;
   overflow: hidden;
 
-  
   .header {
     height: var(--header-height);
     width: 100%;
@@ -542,7 +593,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 
     background: var(--header-bg);
     color: var(--header-text);
@@ -579,7 +629,7 @@ body {
     }
   }
   .main-container {
-    min-height: calc(100% - var(--header-height)); 
+    min-height: calc(100% - var(--header-height));
 
     padding: var(--header-height) 10%;
 
@@ -641,16 +691,17 @@ body {
       padding: 1.15em;
 
       display: block;
-
+border-radius: 10px;
       border: 1px solid var(--text-2);
       color: var(--text-2);
       font-size: 0.75em;
-      font-weight: 600;
+      font-weight: 500;
       &:focus {
         outline: none;
       }
     }
     .quantity-cart-wrapper {
+      margin-top: 20px;
       display: flex;
     }
     .quantity-container {
@@ -663,6 +714,8 @@ body {
       align-items: center;
 
       border: 1px solid var(--text-2);
+border-radius: 10px;
+
 
       button {
         background: transparent;
@@ -675,7 +728,7 @@ body {
       }
       .quantity {
         color: var(--text-2);
-        font-weight: 700;
+        font-weight: 600;
       }
     }
     .add-to-cart-btn {
@@ -707,87 +760,84 @@ body {
       }
     }
   }
-  
+
   //#endregion
 }
 
-.style-tablet .responsive-project-container{
+.style-tablet .responsive-project-container {
   overflow-y: scroll;
-  .header{
+  .header {
     justify-content: space-between;
-    .logo{
+    .logo {
       margin-left: 1rem;
     }
 
-    .navbar{
+    .navbar {
       display: none;
-
     }
-    .sign-in{
+    .sign-in {
       margin-right: 1rem;
     }
   }
-  .main-container{
+  .main-container {
     flex-direction: column;
     padding: 10% 15%;
-    .image-container{
-      img{
+    .image-container {
+      img {
         width: 100%;
       }
     }
-    .product-info-container{
-      margin-top: 1rem  ;
-      .title{
+    .product-info-container {
+      margin-top: 1rem;
+      .title {
         font-size: 1.7rem;
       }
-      .product-description{
+      .product-description {
         width: 80%;
       }
     }
   }
 }
 
-.style-mobile .responsive-project-container{
+.style-mobile .responsive-project-container {
   overflow-y: scroll;
 
-  .header{
+  .header {
     justify-content: space-between;
-    .logo{
+    .logo {
       font-size: 1.3rem;
       margin-left: 1rem;
       font-weight: 700;
     }
-    .navbar{
-        display: none;
+    .navbar {
+      display: none;
     }
-    .sign-in{
+    .sign-in {
       margin-right: 1rem;
       font-size: 0.7rem;
     }
   }
-  .main-container{
+  .main-container {
     flex-direction: column;
     padding: 10% 10%;
-    
-    .image-container{
-      img{
+
+    .image-container {
+      img {
         width: 100%;
       }
     }
-    .product-info-container{
+    .product-info-container {
       margin-top: 1rem;
       padding: 0 0.5rem;
       & > * {
         margin-bottom: 1rem;
       }
-      .title
-      {font-size:1.5rem;
+      .title {
+        font-size: 1.5rem;
       }
-      .product-description{
+      .product-description {
         width: 100%;
       }
     }
   }
 }
-
-
