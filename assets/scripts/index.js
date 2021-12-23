@@ -147,7 +147,8 @@ function cardAnimation() {
     cardAnimation();
   }, 2 * card_Duration * way.length);
 }
-cardAnimation();
+//trigger the animation
+//cardAnimation();
 
 //#endregion cards
 
