@@ -1,6 +1,6 @@
 //#region responsive screens
 const screenBtns = document.querySelectorAll(
-  ".project-2-screen-changer button"
+  ".project-responsive-screen-changer button"
 );
 
 removeOtherActiveClass = () => {
@@ -15,14 +15,14 @@ removeOtherActiveClass = () => {
 function changeScreen(id) {
   removeOtherActiveClass();
   document.getElementById(id).classList.add("active");
-  document.querySelector(".project-2-image").setAttribute("id", id);
+  document.querySelector(".project-responsive-image").setAttribute("id", id);
   setTimeout(() => {
-    document.querySelector(".project-2-image").classList.forEach((c)=>{
+    document.querySelector(".project-responsive-image").classList.forEach((c)=>{
       if(c.substr(0,5)==="style"){
-        document.querySelector(".project-2-image").classList.remove(c)
+        document.querySelector(".project-responsive-image").classList.remove(c)
       }
     })
-    document.querySelector(".project-2-image").classList.add("style-"+id)
+    document.querySelector(".project-responsive-image").classList.add("style-"+id) 
   }, 600);
 }
 //it changes the screen size every interval by traversing through arry
@@ -46,7 +46,7 @@ screenBtns.forEach((btn) => {
     clearInterval(autoplayInterval); //stop the autoplay if manually button is clicked
   });
 });
-//autoplayScreens(3000); //initialize the autoplay of screen changing
+autoplayScreens(3000); //initialize the autoplay of screen changing
 //#endregion
 
 //#region responsive screen plus minus quantity
@@ -68,6 +68,14 @@ quantityElement.innerHTML=parseInt(quantityElement.innerHTML)+q
 
 //#endregion
 
+//project responsive hamburger menu
+
+document.querySelector(".project-responsive .ham-icon").addEventListener("click",()=>{
+  document.querySelector(".project-responsive .side-navbar").classList.add("show")
+})
+document.querySelector(".project-responsive .close-navbar-btn").addEventListener("click",()=>{
+  document.querySelector(".project-responsive .side-navbar").classList.remove("show")
+})
 //#region cards
 
 card_1 = document.querySelector("#card-1");

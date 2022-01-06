@@ -47,12 +47,10 @@
 
 body {
   background: var(--backgroundColor);
-  min-height: 100vh;
-  padding: 0 10%;
+  padding: 0 10% 2rem;
   color: var(--primary-text);
-  font-family: "montserrat";
+  font-family: "roboto";
   overflow-x: hidden;
-  padding-bottom: 2rem;
 }
 
 .main-container {
@@ -223,6 +221,10 @@ body {
   padding-left: 50px;
 }
 
+.rocket-svg {
+  overflow: visible;
+}
+
 /* #endregion home content */
 /* #region project section */
 .projects-section {
@@ -232,8 +234,7 @@ body {
   font-size: 2.6rem;
   margin-bottom: 3rem;
 }
-
-.projects-wrapper {
+.projects-section .projects-wrapper {
   position: relative;
 }
 
@@ -242,42 +243,40 @@ body {
   justify-content: space-between;
   margin-bottom: 10rem;
 }
-
-.row-project {
+.projects-row .row-project {
   width: 45%;
 }
-
-.row-project-image {
+.projects-row .row-project .row-project-image {
   width: 100%;
-  height: 350px;
+  aspect-ratio: 10/6;
   background: #ffffff;
 }
-
-.row-project-description .row-project-type {
-  margin-top: 0.9rem;
+.projects-row .row-project .row-project-description > * {
+  margin-bottom: 0.7rem;
+}
+.projects-row .row-project .row-project-description .row-project-type {
+  margin-top: 1.3rem;
   font-weight: 700;
   font-size: 0.7rem;
   font-family: "josefin slab";
   color: #939393;
 }
-.row-project-description .row-project-title {
-  margin-top: 0.9rem;
+.projects-row .row-project .row-project-description .row-project-title {
   font-family: "josefin sans";
   font-size: 2rem;
   font-weight: 700;
 }
-.row-project-description .row-project-details {
-  margin-top: 0.9rem;
+.projects-row .row-project .row-project-description .row-project-details {
   font-size: 0.9rem;
   line-height: 1.1rem;
   font-weight: 400;
   color: #e3e3e3;
   font-family: "Josefin Slab";
 }
-.row-project-description .row-project-visit-btn {
+.projects-row .row-project .row-project-description .row-project-visit-btn {
+  margin-top: 1rem;
   display: block;
   width: fit-content;
-  margin: 1.2rem 0.2rem 0 0;
   background-color: transparent;
   border: white 2px solid;
   border-radius: 50px;
@@ -286,41 +285,30 @@ body {
   padding: 12px 30px;
   text-decoration: none;
 }
-.row-project-description .row-project-visit-btn:hover {
+.projects-row .row-project .row-project-description .row-project-visit-btn:hover {
   background-color: white;
   color: var(--backgroundColor);
 }
-.row-project-description .row-project-visit-btn:focus {
+.projects-row .row-project .row-project-description .row-project-visit-btn:focus {
   outline: none;
 }
 
-.project {
+.project-shopify {
   margin-bottom: 6rem;
-}
-
-.project-discription {
-  color: #c8a3ff;
-  font-size: 0.8rem;
-  font-weight: 300;
-  padding: 1rem 2rem 0 0;
-}
-
-.project-1 {
   display: flex;
   flex-direction: row-reverse;
+  align-items: flex-start;
 }
-
-.project-1-image {
+.project-shopify .project-shopify-image {
   background-color: white;
   width: 100%;
   margin-left: 3rem;
 }
-.project-1-image img {
+.project-shopify .project-shopify-image img {
   width: 100%;
   display: block;
 }
-
-.project-1-info {
+.project-shopify .project-shopify-info {
   background: transparent;
   width: 50%;
   display: flex;
@@ -328,13 +316,27 @@ body {
   align-content: center;
   justify-content: center;
 }
-
-.project-2 {
-  width: 100%;
-  background: #000;
-  aspect-ratio: 19/12;
+.project-shopify .project-shopify-info .project-title {
+  margin-bottom: 1rem;
+  font-family: "josefin sans";
+  font-size: 2rem;
+  font-weight: 700;
 }
-.project-2 .project-2-image {
+.project-shopify .project-shopify-info .project-description {
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  font-weight: 400;
+  color: #e3e3e3;
+  font-family: "Josefin Slab";
+}
+
+.project-responsive {
+  width: 100%;
+  background: transparent;
+  aspect-ratio: 19/12;
+  margin-bottom: 8rem;
+}
+.project-responsive .project-responsive-image {
   position: relative;
   height: 80%;
   width: 100%;
@@ -342,16 +344,16 @@ body {
   background: white;
   transition: width 2s;
 }
-.project-2 .project-2-image#mobile {
+.project-responsive .project-responsive-image#mobile {
   width: 28%;
 }
-.project-2 .project-2-image#tablet {
+.project-responsive .project-responsive-image#tablet {
   width: 45%;
 }
-.project-2 .project-2-image#lapimage {
+.project-responsive .project-responsive-image#lapimage {
   width: 100%;
 }
-.project-2 .project-2-info {
+.project-responsive .project-responsive-info {
   position: relative;
   height: 20%;
   background: #232946;
@@ -360,49 +362,49 @@ body {
   align-items: flex-end;
   justify-content: space-between;
 }
-.project-2 .project-2-info .project-header {
-  color: white;
-  font-family: "Josefin Sans";
-  font-size: 2.7rem;
+.project-responsive .project-responsive-info .project-title {
+  font-family: "josefin sans";
+  font-size: 2rem;
+  font-weight: 700;
 }
-.project-2 .project-2-screen-changer {
+.project-responsive .project-responsive-screen-changer {
   z-index: 100;
   width: fit-content;
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
 }
-.project-2 .project-2-screen-changer button {
+.project-responsive .project-responsive-screen-changer button {
   padding: 6px 26px;
   text-align: center;
   border: none;
   background: var(--backgroundColor);
   border: 1px solid #858585;
 }
-.project-2 .project-2-screen-changer button:nth-child(1) {
+.project-responsive .project-responsive-screen-changer button:nth-child(1) {
   border-right: none;
   border-image-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.project-2 .project-2-screen-changer button:nth-child(3) {
+.project-responsive .project-responsive-screen-changer button:nth-child(3) {
   border-left: none;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-.project-2 .project-2-screen-changer button svg {
+.project-responsive .project-responsive-screen-changer button svg {
   width: 30px;
 }
-.project-2 .project-2-screen-changer button svg#lappy {
+.project-responsive .project-responsive-screen-changer button svg#lappy {
   width: 40px;
 }
-.project-2 .project-2-screen-changer button svg path {
+.project-responsive .project-responsive-screen-changer button svg path {
   stroke: #232946;
   stroke-width: 5px;
 }
-.project-2 .project-2-screen-changer button.active {
+.project-responsive .project-responsive-screen-changer button.active {
   background: #dfdfdf;
 }
-.project-2 .project-2-screen-changer button.active svg path {
+.project-responsive .project-responsive-screen-changer button.active svg path {
   fill: #232946;
   stroke: #dfdfdf;
   stroke-width: 5px;
@@ -467,40 +469,6 @@ body {
   font-size: 0.65rem;
 }
 
-.pen {
-  animation-name: pen;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-}
-
-.float {
-  animation-name: float;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes pen {
-  0% {
-    transform: translate(0px);
-  }
-  50% {
-    transform: translate(-20px);
-  }
-  100% {
-    transform: translate(0px);
-  }
-}
-@keyframes float {
-  0% {
-    transform: translateY(1px);
-  }
-  50% {
-    transform: translateY(-1px);
-  }
-  100% {
-    transform: translateY(1px);
-  }
-}
 /*#endregion my services section*/
 /*#region footer*/
 .footer {
@@ -597,6 +565,47 @@ body {
   height: 100%;
   overflow: hidden;
 }
+.responsive-project-container .side-navbar {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background-color: white;
+  color: var(--header-text);
+  z-index: 100;
+  width: 50%;
+  max-width: 250px;
+  padding: 1.7rem 10px;
+  transform: translateX(-100%);
+  transition: transform 1000ms;
+}
+.responsive-project-container .side-navbar.show {
+  transform: translateX(0);
+}
+.responsive-project-container .side-navbar .close-navbar-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+}
+.responsive-project-container .side-navbar .close-navbar-btn img {
+  display: block;
+  font-size: 0rem;
+}
+.responsive-project-container .side-navbar .close-navbar-btn:hover {
+  cursor: pointer;
+  background-color: #c3c3c3;
+}
+.responsive-project-container .side-navbar span {
+  display: block;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+.responsive-project-container .side-navbar span:hover {
+  cursor: pointer;
+}
 .responsive-project-container .header {
   height: var(--header-height);
   width: 100%;
@@ -607,6 +616,10 @@ body {
   color: var(--header-text);
   border-bottom: 1px solid lightgray;
   z-index: var(--header-index);
+  padding: 0 10px;
+}
+.responsive-project-container .header .ham-icon {
+  display: none;
 }
 .responsive-project-container .header .logo {
   font-size: 1.8em;
@@ -646,9 +659,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .responsive-project-container .image-container img {
   width: 60%;
+}
+.responsive-project-container .image-container .dots {
+  display: flex;
+  position: absolute;
+  bottom: -1rem;
+}
+.responsive-project-container .image-container .dots span {
+  border: 1px solid #4c4c4c;
+  border-radius: 50%;
+  background-color: transparent;
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+}
+.responsive-project-container .image-container .dots span.active {
+  background-color: #4c4c4c;
 }
 .responsive-project-container .product-info-container {
   width: 100%;
@@ -661,6 +691,7 @@ body {
   font-family: "nunito";
   font-weight: 500;
   color: var(--text-1);
+  margin-bottom: 0.2rem;
 }
 .responsive-project-container .product-info-container .ratings-container {
   margin-left: 5px;
@@ -740,6 +771,7 @@ body {
   width: 60%;
   margin-top: 1.7em;
   font-weight: 600;
+  font-family: "josefin slab";
 }
 .responsive-project-container .product-info-container .product-description p {
   color: var(--text-1);
@@ -750,6 +782,9 @@ body {
 }
 .style-tablet .responsive-project-container .header {
   justify-content: space-between;
+}
+.style-tablet .responsive-project-container .header .ham-icon {
+  display: block;
 }
 .style-tablet .responsive-project-container .header .logo {
   margin-left: 1rem;
@@ -783,6 +818,9 @@ body {
 .style-mobile .responsive-project-container .header {
   justify-content: space-between;
 }
+.style-mobile .responsive-project-container .header .ham-icon {
+  display: block;
+}
 .style-mobile .responsive-project-container .header .logo {
   font-size: 1.3rem;
   margin-left: 1rem;
@@ -814,6 +852,113 @@ body {
 }
 .style-mobile .responsive-project-container .main-container .product-info-container .product-description {
   width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    padding: 0 5% 2rem;
+  }
+
+  .home-section > div {
+    flex-direction: column;
+  }
+
+  .project-shopify {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-shopify .project-shopify-image {
+    margin-left: 0;
+  }
+  .project-shopify .project-shopify-info {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .projects-row {
+    flex-direction: column;
+    margin-bottom: 0 !important;
+  }
+  .projects-row .row-project {
+    width: 100% !important;
+    margin-bottom: 5rem;
+  }
+
+  .project-responsive {
+    padding: 0 1rem;
+    margin-top: 5rem !important;
+  }
+  .project-responsive .project-responsive-image {
+    height: auto;
+    aspect-ratio: 8/11;
+  }
+  .project-responsive .project-responsive-screen-changer {
+    display: none;
+  }
+
+  .responsive-project-container {
+    overflow-y: scroll;
+  }
+  .responsive-project-container .header {
+    justify-content: space-between;
+  }
+  .responsive-project-container .header .ham-icon {
+    display: block;
+  }
+  .responsive-project-container .header .logo {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    font-weight: 700;
+  }
+  .responsive-project-container .header .navbar {
+    display: none;
+  }
+  .responsive-project-container .header .sign-in {
+    margin-right: 1rem;
+    font-size: 0.7rem;
+  }
+  .responsive-project-container .main-container {
+    flex-direction: column;
+    padding: 10% 10%;
+  }
+  .responsive-project-container .main-container .image-container img {
+    width: 100%;
+  }
+  .responsive-project-container .main-container .product-info-container {
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+  }
+  .responsive-project-container .main-container .product-info-container > * {
+    margin-bottom: 1rem;
+  }
+  .responsive-project-container .main-container .product-info-container .title {
+    font-size: 1.5rem;
+  }
+  .responsive-project-container .main-container .product-info-container .product-description {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 950px) {
+  body {
+    padding: 0 5%;
+  }
+
+  .projects-row {
+    margin-bottom: 5rem;
+  }
+  .projects-row .row-project {
+    width: 48%;
+  }
+
+  .project-responsive {
+    margin-top: 10rem;
+  }
+  .project-responsive .project-responsive-screen-changer {
+    overflow: visible;
+  }
+  .project-responsive .project-responsive-screen-changer button {
+    padding: 0px 10px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

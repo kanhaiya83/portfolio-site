@@ -1,3 +1,9 @@
+
+
+
+
+
+
 //initial setup
 
 const flames = SVG("#flames");
@@ -157,6 +163,41 @@ initiate = () => {
 
   setTimeout(() => {
     initiateDetachment()
+    setTimeout(() => {
+      showMoon()
+      setTimeout(() => {
+        showAstronaut()
+      }, 14000);
+    }, 6000);
   }, 3000);
 };
 initiate()
+
+// const moon = SVG("#moon");
+// const astronaut = SVG("#astronaut");
+// moon.animate({
+//   duration: 1,
+//   delay: 0,
+// }).transform({translate:[100,-300],scale:0.2}).opacity(0)
+
+// function showMoon(){
+//   moon.animate({
+//     duration: 14000,
+//     delay: 0,
+// }).transform({translate:[100,-50],scale:1}).opacity(1)
+// }
+
+// function decreaseRocketSize(){
+//   rocketBody.animate({
+//     duration: 6000,
+//     when:"now"
+
+// }).transform({scale:0.85})}
+
+// function showAstronaut(){
+//   astronaut.animate({
+//     duration: 70000,
+//     delay: 0,
+// }).transform({translate:[400,-100],rotate:100})
+// }
+
