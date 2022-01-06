@@ -156,7 +156,8 @@ body {
 /* #region home content */
 .home-section {
   width: 100%;
-  height: calc(100vh - var(--headerHeight));
+  height: 100%;
+  // height: calc(100vh - var(--headerHeight));
 }
 .home-section > div {
   position: relative;
@@ -171,7 +172,7 @@ body {
 }
 .text-content-wrapper {
   width: 100%;
-  & > div {
+  .intro {
     display: flex;
     align-items: center;
     span {
@@ -209,6 +210,9 @@ body {
         transform: translateY(-5rem);
         display: flex;
         align-items: center;
+        span{
+          width: 100%;
+        }
         &.current {
           transition: transform 1s;
           transform: translateY(0);
@@ -227,7 +231,16 @@ body {
     letter-spacing: 1px;
   }
 }
+.svg-container{
+  width: 100%;
+  padding: 0 5%;
+  svg{
+    &:hover{
+      border: none;
+    }
 
+  }
+}
 #bg {
   z-index: -1;
 }
@@ -245,7 +258,7 @@ body {
 
 /* #region project section */
 .projects-section {
-  margin-top: 150px;
+  margin-top: 4rem;
   .projects-section-header {
     font-size: 2.6rem;
     margin-bottom: 3rem;
@@ -399,7 +412,7 @@ margin-top: 1.3rem;
     width: fit-content;
     display: flex;
     justify-content: flex-end;
-    overflow: hidden;
+    overflow: visible;
     button {
       padding: 6px 26px;
       text-align: center;
@@ -452,7 +465,7 @@ margin-top: 1.3rem;
   .cards-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 40px;
     row-gap: 50px;
   }
@@ -930,9 +943,7 @@ margin-top: 1.3rem;
   body{
     padding: 0 5% 2rem;
   }
-  .home-section > div {
-    flex-direction: column;
-  }
+ 
   .project-shopify{
     flex-direction: column;
     align-items: center;
@@ -956,13 +967,16 @@ margin-top: 1.3rem;
     padding: 0 1rem;
     margin-top: 5rem!important;
     .project-responsive-image {
-      height: auto;
-      aspect-ratio: 8/11;
+      width: 100%!important;
+      aspect-ratio: 9/13!important;
+      height: auto!important;
     }
     .project-responsive-screen-changer{
+     overflow: visible;
       display: none;
     }
   }
+  //mobile design
   .responsive-project-container {
     overflow-y: scroll;
   
@@ -1008,12 +1022,88 @@ margin-top: 1.3rem;
       }
     }
   }
-
+//services section
+.services-section{
+  .cards-container{
+    grid-template-columns: 1fr!important;
+  }
+}
+}
+@media screen and (max-width: 850px) {
+ //for rocket
+ .home-section > div {
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  .text-content-wrapper{
+    text-align: center;
+    .intro{
+      justify-content: center;
+    }
+  }
+}
+.projects-section{
+   margin-top: 0rem;
+}
+.svg-container{
+  height: fit-content;
+  margin-top: 4rem;
+  padding: 0;
 }
 
+//end for rocket
+//tablet design
+.responsive-project-container {
+  overflow-y: scroll;
+  .header {
+    justify-content: space-between;
+    .ham-icon {
+      display: block;
+    }
+    .logo {
+      margin-left: 1rem;
+    }
+
+    .navbar {
+      display: none;
+    }
+    .sign-in {
+      margin-right: 1rem;
+    }
+  }
+  .main-container {
+    flex-direction: column;
+    padding: 10% 15%;
+    .image-container {
+      img {
+        width: 100%;
+      }
+    }
+    .product-info-container {
+      margin-top: 1rem;
+      .title {
+        font-size: 1.7rem;
+      }
+      .product-description {
+        width: 80%;
+      }
+    }
+  }
+}
+.project-responsive{
+  
+  .project-responsive-image {
+    width: 100%!important;
+    aspect-ratio: 9/11!important;
+    height: auto!important;
+  }
+.project-responsive-screen-changer{
+   display: none;
+ }}
+}
 @media screen and (max-width:950px ) {
 body{
-  padding: 0 5%;
+  padding: 0 5% 2rem;
 }
 .projects-row{
   margin-bottom: 5rem;
@@ -1029,5 +1119,38 @@ body{
   button{
     padding: 0px 10px;
   }}
+}
+.services-section{
+  .cards-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.footer{ 
+.contacts-container{
+  flex-direction: column;
+  .phone{
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+  .email-icon,.phone-icon{
+    width: 45px;
+  }
+  .email-address,.phone-number{
+    padding: 0 10px;
+  }
+}
+
+.copyright-text{
+  padding-bottom:1REM ;
+}
+}
+}
+
+@media screen and (max-width:1081px) {
+.svg-container{
+  padding: 0;
+}
+.responsive-project-container{
+  overflow: scroll;
 }
 }
